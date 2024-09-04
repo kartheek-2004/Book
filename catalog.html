@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catalog</title>
+    <style>
+        body
+        {
+            background-image: url(https://img.freepik.com/free-vector/bokeh-defocused-background_23-2148497833.jpg);
+            height: auto;
+            background-repeat: no-repeat;
+            background-size: 100% 100%;
+            margin: 0%;
+
+        }
+         .navigation
+        {
+            padding: 1%;
+            /* border: 10%;  */
+            background: black;
+            text-align: right;
+            word-spacing: 30px;
+        }
+        .navigation a
+        {
+            color: white;
+            text-decoration: none;
+            font-size: 30px;
+        }
+        #i1
+        {
+            position: absolute;
+            margin-top: 10px;
+            margin-left: 15px;
+            width: 10%;
+        }
+
+        .img
+        {
+            image-resolution: 30%;
+        }
+        .catalog{
+            margin-top: 5%;
+            margin-left: 20%;
+            margin-right: 20%;
+            padding:2%;
+            display: grid;
+            grid-template-columns: repeat(3,auto);
+            gap: 30px;
+        }
+        .catalog div{
+            box-shadow: 5px 5px 5px rgba(0,0,0,0.6);
+            padding: 5%;
+        }
+        .btn{
+            border: none;
+            width: 40%;
+            padding: 3%;
+            background-color:brown;
+            box-shadow: 2px 2px 2px rgba(0,0,0,0.6);
+
+        }
+        .search
+        {
+            margin-top: 4%;
+            font-size: 20px;
+            text-align: center;
+        }
+        .search input
+        {
+            padding: 0.5%;
+            width: 50%;
+        }
+
+    </style>
+</head>
+<body>
+    <img src="download.png" alt="" id="i1">
+
+    <nav class="navigation">
+        <a href="index.html">Home</a>
+        <a href="login.html"> Login</a>
+        <a href="register.html">Register</a>
+        <a href="catalog.html">Catalog</a>
+        <a href="cart.html">Cart</a>
+        <a href="order.html">Orders</a>
+
+        <a href="profile.html">Profile</a>
+
+        </nav>
+        <div class="search">
+            <b>SEARCH:</b>
+            <input placeholder="Book Name or category">
+        </div>
+        <section class="catalog">
+            <div>
+                <img width="60%" src="https://m.media-amazon.com/images/I/71-++hbbERL._AC_UF1000,1000_QL80_.jpg"/>
+                <p>Harry Potter and The Sorcers Stone</p>
+                <p>1000</p>
+                <p>J.K.Rowling</p>
+                <button class="btn">Add to Cart</button>
+            </div>
+            <div>
+                <img width="60%" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQx3UQ9ikyCWlZa9n33vUDyz-aqBis9JDFpFXv08L1QiDVbpiMFVgE46U9g-rmJizbPY3Y&usqp=CAU"/>
+                <p>Harry Potter and The Chamber of Secrets</p>
+                <p>1000</p>
+                <p>J.K.Rowling</p>
+                <button class="btn">Add to Cart</button>
+            </div>
+            <div>
+                <img width="60%" src="https://images.ctfassets.net/usf1vwtuqyxm/3d9kpFpwHyjACq8H3EU6ra/85673f9e660407e5e4481b1825968043/English_Harry_Potter_4_Epub_9781781105672.jpg?w=914&q=70&fm=jpg"/>
+                <p>Harry Potter and The Goblet of Fire</p>
+                <p>1100</p>
+                <p>J.K.Rowling</p>
+                <button class="btn">Add to Cart</button>
+            </div>
+            <div>
+                <img width="60%" src="https://observer.com/wp-content/uploads/sites/2/2017/06/hp6_kazukibuishicover.jpg?quality=80&w=635"/>
+                <p>Harry Potter and The Half Blood Prince</p>
+                <p>1050</p>
+                <p>J.K.Rowling</p>
+                <button class="btn">Add to Cart</button>
+            </div>
+           
+        </section>
+</body>
+</html>

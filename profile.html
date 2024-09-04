@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile</title>
+    <style>
+        body {
+            background-image: url(https://cdn.pixabay.com/photo/2016/10/29/09/33/abstract-1780184_1280.png);
+            margin: 0%;
+            background-repeat: no-repeat;
+            background-size: cover;
+            height: auto;
+        }
+
+        .navigation {
+            padding: 1%;
+            /* border: 10%;  */
+            background: black;
+            text-align: right;
+            word-spacing: 30px;
+        }
+
+        .navigation a {
+            color: white;
+            text-decoration: none;
+            font-size: 30px;
+        }
+
+        #i1 {
+            position: absolute;
+            margin-top: 10px;
+            margin-left: 15px;
+            width: 10%;
+        }
+
+        .img {
+            image-resolution: 30%;
+        }
+
+        .ab {
+            border-radius: 50%;
+            width: 15%;
+        }
+
+        .profile {
+            margin-left: 35%;
+            line-height: 70px;
+        }
+
+        .profile input {
+            padding: 0.5%;
+            width: 30%;
+        }
+
+        .gen {
+            margin-left: 35%;
+        }
+    </style>
+</head>
+
+<body>
+    <img src="download.png" alt="" id="i1">
+
+    <nav class="navigation">
+        <a href="index.html">Home</a>
+        <a href="login.html"> Login</a>
+        <a href="register.html">Register</a>
+        <a href="catalog.html">Catalog</a>
+        <a href="cart.html">Cart</a>
+        <a href="order.html">Orders</a>
+        <a href="profile.html">Profile</a>
+    </nav>
+    <center>
+
+        <img src="p.jpeg" alt="" class="ab">
+    </center>
+    <section class="profile">
+        Name:
+        <input type="text" id="name"> <br>
+        Phone:
+        <input type="text" id="phone"> <br>
+        Email:
+        <input type="text" id="email"> <br>
+        Address:
+        <input type="text" id="address"> <br>
+    </section>
+    <div class="gen">
+
+        Gender:
+        <input type="radio" name="r" checked="true">Male
+        <input type="radio" name="r" >Female <br>
+        <button type="submit" onclick="profile()">Save</button>
+    </div>
+    <br>
+    <center>
+
+        <button>LOGOUT</button>
+    </center>
+    <script>
+        function profile() {
+            var name = document.getElementById('name').value;
+            var phone = document.getElementById('phone').value;
+            var email = document.getElementById('email').value;
+            var address = document.getElementById('address').value;
+            var valphone = /^\d{10}$/;
+            var mailformat = /^[a-zA-Z0-9]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,3}$/;
+
+            if (name.trim() === '' && phone.trim() === '' && email.trim() === '' && address.trim() === '') {
+                alert("enter details");
+            }
+            if (name.trim() === '') {
+                alert('Please enter a valid name.');
+                return false;
+            }
+
+            // Assuming a valid phone number is 10 digits
+            if (!(valphone.test(phone))) {
+                alert('Please enter a valid 10-digit phone number.');
+                return false;
+            }
+
+            if (email.trim() === '' || !(mailformat.test(email))) {
+                alert('Please enter a valid email address.');
+                return false;
+            }
+            if (address.trim() === '') {
+                alert("enter address");
+                return false;
+            }
+            alert('Details Updated');
+            return true;
+        }
+    </script>
+</body>
+
+</html>

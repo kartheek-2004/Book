@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Store</title>
+    <style>
+        body {
+            background-image: url("https://e0.pxfuel.com/wallpapers/688/312/desktop-wallpaper-reading-old-books-the-imaginative-conservative-bookstore.jpg");
+            margin: 0;
+            background-repeat: no-repeat;
+            background-size: cover;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        .navigation {
+            background: rgba(0, 0, 0, 0.8);
+            padding: 1%;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+        }
+        .navigation a {
+            color: white;
+            text-decoration: none;
+            font-size: 20px;
+            padding: 10px 20px;
+            transition: background-color 0.3s ease;
+        }
+        .navigation img {
+            width: 100px;
+            height: auto;
+        }
+        .navigation a:hover {
+            background-color: gray;
+            border-radius: 5px;
+        }
+        p {
+            margin: 0;
+            padding: 20px;
+            color: white;
+            text-align: center;
+            font-size: 40px;
+            background: rgba(0, 0, 0, 0.6);
+            border-radius: 10px;
+        }
+        @media (max-width: 768px) {
+            .navigation {
+                flex-direction: column;
+                word-spacing: normal;
+            }
+            .navigation a {
+                font-size: 18px;
+                padding: 10px;
+            }
+            p {
+                font-size: 30px;
+                margin-top: 10%;
+            }
+        }
+        @media (max-width: 480px) {
+            .navigation {
+                padding: 10px;
+            }
+            .navigation a {
+                font-size: 16px;
+                padding: 8px;
+            }
+            p {
+                font-size: 25px;
+                margin-top: 20%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navigation">
+        <a href="index.html"><img src="download.png" alt="Book Store Logo" id="i1"></a>
+        <a href="index.html">Home</a>
+        <a href="login.html">Login</a>
+        <a href="register.html">Register</a>
+        <a href="catalog.html">Catalog</a>
+        <a href="cart.html">Cart</a>
+        <a href="order.html">Orders</a>
+        <a href="profile.html">Profile</a>
+    </nav>
+    <p>WELCOME TO ONLINE BOOK STORE</p>
+</body>
+</html>

@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <style>
+        body {
+            background-image: url(72624934_53f989.jpg);
+            background-repeat: no-repeat;
+            margin: 0%;
+            background-size: 100% 100%;
+            height: 100vh;
+
+        }
+
+        .navigation {
+            padding: 1%;
+            /* border: 10%;  */
+            background: black;
+            text-align: right;
+            word-spacing: 30px;
+        }
+
+        .navigation a {
+            color: white;
+            text-decoration: none;
+            font-size: 30px;
+        }
+
+        .login {
+            padding: 3%;
+            margin: auto;
+            line-height: 30px;
+            margin-top: 10%;
+            margin-right: 5%;
+            border-radius: 30px;
+            background-image: url(https://media.istockphoto.com/id/1342851017/vector/elegant-black-background-vector-illustration-with-vintage-distressed-grunge-texture-and-dark.jpg?s=612x612&w=0&k=20&c=THEu64UKfhNsnXuVWOHsQehRr7uuKWjbYrshHoTFsS0=);
+            background-repeat: no-repeat;
+            background-size: cover;
+            width: 30%;
+            text-align: center;
+            font-size: 20px;
+            color: white;
+        }
+
+        .login div {
+            font-size: small;
+        }
+
+        .login div a {
+            color: aquamarine;
+            font-size: 20px;
+        }
+
+        #b1 {
+            width: 20%;
+            font-size: 15px;
+        }
+
+        #i1 {
+            position: absolute;
+            margin-top: 10px;
+            margin-left: 15px;
+            width: 10%;
+
+        }
+    </style>
+</head>
+
+<body>
+    <img src="download.png" alt="" id="i1">
+
+    <nav class="navigation">
+        <a href="index.html">Home</a>
+        <a href="login.html"> Login</a>
+        <a href="register.html">Register</a>
+        <a href="catalog.html">Catalog</a>
+        <a href="cart.html">Cart</a>
+        <a href="order.html">Orders</a>
+
+        <a href="profile.html">Profile</a>
+
+    </nav>
+    <section class="login">
+        Email Id:
+        <input type="text" id="l1" size="30" required><br>
+        <p id="pa1"></p>
+        Password:
+        <input type="password" name="" id="p1">
+        <br>
+        <input type="checkbox" onclick="myFunction()">Show Password
+        <br>
+        <input type="button" id="b1" value="Login" onclick="validateForm()">
+        <br>
+        <div>
+            <a href="#">Forgot Password?</a>
+            <br>
+            New User?
+            <a href="register.html">Register</a>
+        </div>
+    </section>
+    <script>
+        function validateForm() {
+            var email = document.getElementById("l1").value;
+            var password = document.getElementById("p1").value;
+            var mailformat = /^[a-zA-Z0-9]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,3}$/;
+            var pval = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*()\-_+=]).{8,}$/;
+            if (!(mailformat.test(email))) {
+                alert("Please enter a valid email addrress");
+            }
+            else {
+
+                if (pval.test(password)) {
+                    alert("Login successfull \n click to continue");
+                    open("Catalog.html")
+                }
+                else {
+                    alert("enter valid password\nPassword must contain atleast one uppercase,digit,special charcter and must be minimum of 8 characters");
+                }
+            }
+
+        }
+        function myFunction() {
+            var x = document.getElementById("p1");
+            if (x.type === "password") {
+                x.type = "text";
+            } else {
+                x.type = "password";
+            }
+        }
+    </script>
+
+
+
+
+
+
+
+</body>
+
+</html>

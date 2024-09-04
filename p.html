@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Password Strength Checker</title>
+</head>
+<body>
+
+<h2>Password Strength Checker</h2>
+
+<label for="password">Enter Password:</label>
+<input type="password" id="passwordInput" onkeyup="checkPasswordStrength()">
+<p id="strengthIndicator"></p>
+
+<script>
+function checkPasswordStrength() {
+    // Get the password input element
+    var passwordInput = document.getElementById("passwordInput");
+
+    // Get the value of the password input
+    var password = passwordInput.value;
+
+    // Validate and calculate password strength (this is a simple example)
+    var strength = 0;
+
+    // Check if the password has at least 8 characters
+    if (password.length >= 8) {
+        strength += 1;
+    }
+
+    // Check if the password contains both uppercase and lowercase characters
+    if (/[a-z]/.test(password) && /[A-Z]/.test(password)) {
+        strength += 1;
+    }
+
+    // Check if the password contains at least one digit
+    if (/\d/.test(password)) {
+        strength += 1;
+    }
+
+    // Check if the password contains at least one special character
+    if (/[^a-zA-Z\d]/.test(password)) {
+        strength += 1;
+    }
+
+    // Map strength values to a descriptive message
+    var strengthMessage = "";
+    switch (strength) {
+        case 0:
+            strengthMessage = "Weak";
+            break;
+        case 1:
+            strengthMessage = "Moderate";
+            break;
+        case 2:
+            strengthMessage = "Strong";
+            break;
+        case 3:
+            strengthMessage = "Very Strong";
+            break;
+        case 4:
+            strengthMessage = "Extremely Strong";
+            break;
+        default:
+            break;
+    }
+
+    // Update the strength indicator element with the calculated strength message
+    var strengthIndicator = document.getElementById("strengthIndicator");
+    strengthIndicator.innerText = "Password Strength: " + strengthMessage;
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,23 @@
+  else if(name.trim()=="")
+            {
+                alert("enter your name");
+            }
+            else if(num.trim()=="")
+            {
+                alert("enter your mobile number");
+            }
+            else if(email.trim()=="")
+            {
+                alert("enter your email");
+            }
+            else if(pass1.trim()=="")
+            {
+                alert("enter your password");
+            }
+            else if(pass2.trim()=="")
+            {
+                alert("confirm your password");
+            }
+            else{
+                alert("proceed");
+            }

@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login Page</title>
+    <style>
+        body {
+            background-color: #f4f4f4;
+            background-image: url('https://th.bing.com/th/id/OIP.qy7UVkPE39xqLs3S-6GTfAHaE2?pid=ImgDet&rs=1');
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        nav {
+            /* background-image: url('https://th.bing.com/th/id/OIP.EyQrGrqyVA-OvTaQ6j5D0gHaEo?pid=ImgDet&rs=1'); Set the same background image for the nav */
+            background-size: cover; /* This property scales the image to cover the entire nav */
+            background-position: center;
+            background-repeat: no-repeat;
+            background-color: rgba(0, 0, 0, 0.6); /* To make the text more readable */
+            text-align: center;
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+        }
+    
+        nav a {
+            text-decoration: none;
+            color: #fff;
+            padding: 10px 20px;
+        }
+    
+        nav a:hover {
+            background-color: #555;
+        }
+
+        .login-form {
+            background-color: #af8f8faa;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            padding: 20px;
+            text-align: center;
+            width: 300px;
+        }
+
+        h2 {
+            color: #333;
+        }
+
+        /* input {
+            width: 80%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        } */
+
+        button {
+            background-color: #333;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #555;
+        }
+
+        .forgot-password {
+            margin-top: 10px;
+            color: #333;
+        }
+
+        .register-link {
+            color: #333;
+        }
+        #l1 
+        {
+            width: 80%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px; 
+        }
+        #p1
+        {
+            width: 80%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px; 
+        }
+    </style>
+</head>
+<body>
+    <section class="login-form">
+        <h2>Login</h2>
+        <form>
+            <input type="text" placeholder="Email" id="l1" required>
+            <input type="password" placeholder="Password"id="p1" required>
+            <br>
+            <input type="checkbox" onclick="myFunction()">Show  Password <br> <br>
+            <button onclick="validateForm()">Login</button>
+        </form>
+        <p class="forgot-password"><a href="#">Forgot Password?</a></p>
+        <p class="register-link">New user? <a href="register.html">Register here</a></p>
+        
+    </section>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="registration.html">Register</a>
+            <a href="login.html">Login</a>
+            <a href="catalogue.html">Catalog</a>
+            <a href="profile.html">User Profile</a>
+            <a href="cart.html">Cart</a>
+            <a href="payment.html">Payment Options</a>
+            <a href="order.html">Order Confirmation</a>
+        </nav>
+    <script>
+        function validateForm() {
+            var email = document.getElementById("l1").value;
+            var password = document.getElementById("p1").value;
+            var mailformat = /^[a-zA-Z0-9]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,3}$/;
+            var pval = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*()\-_+=]).{8,}$/;
+            if (!(mailformat.test(email))) {
+                alert("Please enter a valid email addrress");
+            }
+            else {
+
+                if (pval.test(password)) {
+                    alert("Login successfull \n click to continue");
+                    open("Catalog.html")
+                }
+                else {
+                    alert("enter valid password\nPassword must contain atleast one uppercase,digit,special charcter and must be minimum of 8 characters");
+                }
+            }
+
+        }
+        function myFunction() {
+            var x = document.getElementById("p1");
+            if (x.type === "password") {
+                x.type = "text";
+            } else {
+                x.type = "password";
+            }
+        }
+    </script>
+</body>
+</html>

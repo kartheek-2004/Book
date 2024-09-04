@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <style>
+        body{
+            background-image: url(jj.png);
+            background-repeat: no-repeat;
+            background-size: contain;
+            background-size: cover;
+            margin: 0%;
+            height: 100vh;
+
+        }
+         .navigation
+        {
+            padding: 1%;
+            background: black;
+            text-align: right;
+            word-spacing: 30px;
+        }
+        .navigation a
+        {
+            color: white;
+            text-decoration: none;
+            font-size: 30px;
+        }
+        .reg
+        {
+            text-align: right;
+            margin-top: 8%;
+            margin-right: 20px;
+        }
+        .reg input
+        {
+            margin-right: 10%;
+            margin-bottom: 1%;
+            padding:1%;
+            width:40%;
+        }
+       
+        .reg1
+        {
+        margin-left: 66%;
+        }
+        #i1
+        {
+            position: absolute;
+            margin-top: 10px;
+            margin-left: 15px;
+            width: 10%;
+
+        }
+
+    </style>
+</head>
+<body>
+    
+    <img src="download.png" alt="" id="i1">
+    <nav class="navigation">
+        <a href="index.html">Home</a>
+        <a href="login.html"> Login</a>
+        <a href="register.html">Register</a>
+        <a href="catalog.html">Catalog</a>
+        <a href="cart.html">Cart</a>
+        <a href="order.html">Orders</a>
+
+        <a href="profile.html">Profile</a>
+
+    </nav>
+    <section class="reg">
+        <input placeholder="Enter your name" id="name" required><br>
+        <input placeholder="Enter your mobile number" id="phone" required><br>
+        <input placeholder="Enter your email id" id="email" required><br>
+        <input placeholder="Enter password" id="pass1" type="password" required><br>
+        <input placeholder="Confirm password" id="pass2" required><br>
+
+        </section>
+    <input type="button" class="reg1" value="Register" onclick="register()">
+    <script>
+        function register() {
+            var name = document.getElementById('name').value;
+            var phone = document.getElementById('phone').value;
+            var email = document.getElementById('email').value;
+            var password = document.getElementById('pass1').value;
+            var confirmPassword = document.getElementById('pass2').value;
+            var valphone=/^\d{10}$/;
+            var mailformat = /^[a-zA-Z0-9]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,3}$/;
+            var pval = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*()\-_+=]).{8,}$/;
+            if(name.trim() === '' && phone.trim() === '' && email.trim() === '' && password.trim() === '' )
+            {
+                alert("enter details");
+            }
+            if (name.trim() === '') {
+                alert('Please enter a valid name.');
+                return false;
+            }
+
+            // Assuming a valid phone number is 10 digits
+            if (!(valphone.test(phone))) {
+                alert('Please enter a valid 10-digit phone number.');
+                return false;
+            }
+
+            if (email.trim() === '' || !(mailformat.test(email))) {
+                alert('Please enter a valid email address.');
+                return false;
+            }
+
+            if (password.trim() === '' || !(pval.test(password))) {
+                alert('Please enter a valid password with at least 8 characters.');
+                return false;
+            }
+
+            if (confirmPassword.trim() !== password.trim()) {
+                alert('Password and confirm password do not match.');
+                return false;
+            }
+
+       
+            alert('Registration successful!');
+            return true;
+        }
+    </script>
+</body>
+</html>
